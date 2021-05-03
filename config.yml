@@ -1,0 +1,18 @@
+searchSpace:
+  sparsity:
+    _type: choice
+    _value: [0.25, 0.5, 0.75]
+  pruner:
+    _type: choice
+    _value: ['level', 'slim', 'amc', 'l2', 'fpgm', 'taylorfo', 'apoz', 'mean_activation']
+  model:
+    _type: choice
+    _value: ['transformer']
+trainingService:
+  platform: local
+trialCodeDirectory: .
+trialCommand: python3 Search.py --nni
+trialConcurrency: 1
+trialGpuNumber: 0
+tuner:
+  name: Random
